@@ -12,7 +12,32 @@ class SiteController extends Controller
      */
     public function index()
     {
-        //
+        // add search/filter function based on the selected main nav section
+        return view('index');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function group()
+    {
+        // add filter function to get data based on button pressed
+        $projects = Site::all()->get;
+        return view('index')->with('projects', $projects);
+    }
+
+    // Direct routes
+    public function about()
+    {
+        return view('about');
+    }
+    public function contact()
+    {
+        return view('contact');
+    }
+    public function mhs()
+    {
+        return view('mhs');
     }
 
     /**
